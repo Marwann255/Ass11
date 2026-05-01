@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Login System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <video autoplay muted loop id="bg-video">
+        <source src="/Ass 11/mp_.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay">
+        <div class="container">
+            <h1 class="main-title">Smart Login & SignUP System</h1>
+
+            <div id="login-section">
+                <h2 class="form-title">Log in</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <input type="password" placeholder="Enter your password" required>
+                    <button type="submit" class="action-btn">Log in</button>
+                </form>
+                <p class="toggle-text">Don't have an account? <span id="to-signup">SignUP here</span></p>
+            </div>
+
+            <div id="signup-section" style="display: none;">
+                <h2 class="form-title">SignUP</h2>
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" class="highlight-input" required>
+                    <input type="password" placeholder="Create Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="action-btn">SignUP</button>
+                </form>
+                <p class="toggle-text">Already have an account? <span id="to-login">Log in here</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginSection = document.getElementById('login-section');
+        const signupSection = document.getElementById('signup-section');
+        const toSignup = document.getElementById('to-signup');
+        const toLogin = document.getElementById('to-login');
+
+        toSignup.onclick = () => {
+            loginSection.style.display = 'none';
+            signupSection.style.display = 'block';
+        };
+
+        toLogin.onclick = () => {
+            signupSection.style.display = 'none';
+            loginSection.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
